@@ -1,0 +1,48 @@
+{% extends 'bootstrap2.html' %} {% block title %} View Charging Stations {%
+endblock title %} {% block dashboard %} View Charging Stations {% endblock
+dashboard %}{% block body %}
+<h3>View Charging Stations</h3>
+
+{% include "message.html" %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>MAINT ID</th>
+            <th>DATE</th>
+            <th>DESCRIPTION</th>
+            <th>CS ID</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for station in maintain %}
+          <tr>
+            <td>{{ station.maint_id }}</td>
+            <td>{{ station.date }}</td>
+            <td>{{ station.Description }}</td>
+            <td>{{ station.CS_id }}</td>
+            <td>
+              <a
+                href="{{ url_for('updatemaintenance', id=station.maint_id) }}"
+                class="btn btn-primary"
+                >Update</a
+              >
+              <form
+                action="{{ url_for('deletemaintenance', id=station.maint_id) }}"
+                method="post"
+                style="display: inline"
+              >
+                <button type="submit" class="btn btn-danger">Delete</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock body %}

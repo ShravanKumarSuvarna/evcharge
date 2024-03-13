@@ -1,0 +1,64 @@
+{% extends 'bootstrap2.html' %} {% block title %}Add Maintenance{% endblock
+title %} {% block dashboard %}Add Maintenance{% endblock dashboard %} {% block
+body %}
+<h3>Add Maintenance</h3>
+<form
+  action="/addmaintenance"
+  method="post"
+  class="form-search align-items-stretch mb-3"
+  data-aos="fade-up"
+  data-aos-delay="200"
+  style="width: 60%; margin: 0 auto; padding-bottom: 20px"
+>
+  {% include "message.html" %}
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the maint_id"
+        name="maint_id"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="date"
+        class="form-control"
+        placeholder="Enter the Date"
+        name="date"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the Description"
+        name="Description"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the CS_id"
+        name="CS_id"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <button type="submit" class="btn btn-primary btn-sm float-left">
+      Submit
+    </button>
+  </div>
+</form>
+{% endblock body %}

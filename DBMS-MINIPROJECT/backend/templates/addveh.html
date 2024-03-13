@@ -1,0 +1,61 @@
+{% extends 'baselogin.html' %} {% block title %}User Login{% endblock title %}
+{% block form %}
+<h3>Add Vehicle</h3>
+<form
+  action="/addveh"
+  method="post"
+  class="form-search align-items-stretch mb-3"
+  data-aos="fade-up"
+  data-aos-delay="200"
+  style="width: 60%; margin: 0 auto; padding-bottom: 20px"
+>
+  {% include "message.html" %}
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the regno"
+        name="regno"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the brand"
+        name="vname"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <select class="form-control" name="vtype" required>
+        <option value="">Add vehicle type</option>
+        <option value="2-wheeler">2-wheeler</option>
+        <option value="4-wheeler">4-wheeler</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Enter the battery Capacity"
+        name="batterycapacity"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <button type="submit" class="btn btn-primary btn-sm float-left">
+      Submit
+    </button>
+  </div>
+</form>
+{% endblock form %}

@@ -1,0 +1,62 @@
+{% extends 'baselogin.html' %} {% block title %}User Signup{% endblock title %}
+{% block form %}
+<h2>Sign Up</h2>
+
+<div class="row gy-4 justify-content-center">
+  <form
+    action="/signup"
+    method="post"
+    class="form-search align-items-stretch mb-3"
+    data-aos="fade-up"
+    data-aos-delay="200"
+    style="width: 60%; margin: 0 auto"
+  >
+    {% include "message.html" %}
+    <div class="col-lg-8" style="margin-bottom: 20px">
+      <!-- Added margin between input tags -->
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter the User-ID"
+          name="User_id"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-lg-8" style="margin-bottom: 20px">
+      <!-- Added margin between input tags -->
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Enter the User-Name"
+          name="User_name"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-lg-8" style="margin-bottom: 20px">
+      <div class="form-group">
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Enter the Password"
+          name="User_password"
+          required
+        />
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <button type="submit" class="btn btn-primary btn-sm float-left">
+        Sign Up
+      </button>
+
+      <a href="/login" class="text-dark" style="margin-left: 10px"
+        >Click here to Login</a
+      >
+    </div>
+  </form>
+</div>
+
+{% endblock form %}

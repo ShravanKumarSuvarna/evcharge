@@ -1,0 +1,32 @@
+{% extends 'baselogin.html' %} {% block title %} View Feedback {% endblock title
+%} {% block dashboard %} View Feedback {% endblock dashboard %}{% block body %}
+<h3>View Feedback</h3>
+
+{% include "message.html" %}
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Feedback_ID</th>
+            <th>COMMENTS</th>
+            <th>RATING</th>
+            <th>CS ID</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for station in feedbacks %}
+          <tr>
+            <td>{{ station.f_id }}</td>
+            <td>{{ station.comments }}</td>
+            <td>{{ station.rating }}</td>
+            <td>{{ station.CS_id }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock body %}

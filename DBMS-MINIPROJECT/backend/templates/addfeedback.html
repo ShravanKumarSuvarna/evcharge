@@ -1,0 +1,64 @@
+{% extends 'baselogin.html' %} {% block title %}User Login{% endblock title %}
+{% block form %}
+<h3>Add Vehicle</h3>
+<form
+  action="/addfeedback"
+  method="post"
+  class="form-search align-items-stretch mb-3"
+  data-aos="fade-up"
+  data-aos-delay="200"
+  style="width: 60%; margin: 0 auto; padding-bottom: 20px"
+>
+  {% include "message.html" %}
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the Feedback_id"
+        name="f_id"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the comments"
+        name="comments"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <select class="form-control" name="rating" required>
+        <option value="">Add ratings from 1-5</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the CS_id"
+        name="CS_id"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <button type="submit" class="btn btn-primary btn-sm float-left">
+      Submit
+    </button>
+  </div>
+</form>
+{% endblock form %}

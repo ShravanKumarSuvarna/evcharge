@@ -1,0 +1,85 @@
+{% extends 'bootstrap2.html' %} {% block title %}Add Charging Station{% endblock
+title %} {% block dashboard %}Add Charging Station{% endblock dashboard %} {%
+block body %}
+<h3>Add Charging Station</h3>
+<form
+  action="/addcharger"
+  method="post"
+  class="form-search align-items-stretch mb-3"
+  data-aos="fade-up"
+  data-aos-delay="200"
+  style="width: 60%; margin: 0 auto; padding-bottom: 20px"
+>
+  {% include "message.html" %}
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the CS-ID"
+        name="CS_id"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the Name"
+        name="C_Name"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the Location"
+        name="C_location"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="number"
+        class="form-control"
+        placeholder="Enter the Capacity"
+        name="C_Capacity"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <select class="form-control" name="C_Status" required>
+        <option value="">Select Status</option>
+        <option value="Active">Active</option>
+        <option value="Maintenance">Maintenance</option>
+      </select>
+    </div>
+  </div>
+  <div class="col-lg-8" style="margin-bottom: 20px">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Enter the Geo-Location"
+        name="C_geolocation"
+        required
+      />
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <button type="submit" class="btn btn-primary btn-sm float-left">
+      Submit
+    </button>
+  </div>
+</form>
+
+{% endblock body %}
